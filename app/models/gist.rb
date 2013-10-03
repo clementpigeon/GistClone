@@ -11,6 +11,11 @@ class Gist < ActiveRecord::Base
   primary_key: :id,
   foreign_key: :gist_id
 
+  has_many :gist_files,
+  class_name: "GistFile",
+  primary_key: :id,
+  foreign_key: :gist_id
+
   has_many :favoriters, through: :favorites, source: :user
 
 end
