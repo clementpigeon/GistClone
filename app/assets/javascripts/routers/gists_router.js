@@ -6,7 +6,8 @@ GistCloneApp.Routers.GistsRouter = Backbone.Router.extend({
 
   routes:{
     "": "index",
-    'gists/new' : 'new'
+    'gists/new' : 'new',
+    'gits/:id': "show"
   },
 
   index: function(){
@@ -17,5 +18,12 @@ GistCloneApp.Routers.GistsRouter = Backbone.Router.extend({
   new: function(){
     var formView = new GistCloneApp.Views.GistFormView();
     this.$rootEl.html(formView.render().$el);
+  },
+
+  show: function(id){
+    GistCloneApp.gists.find
+    var gistShowView = new GistCloneApp.Views.GistShowView({
+      model:
+    });
   }
 });
