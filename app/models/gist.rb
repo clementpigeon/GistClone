@@ -6,5 +6,11 @@ class Gist < ActiveRecord::Base
   primary_key: :id,
   foreign_key: :user_id
 
+  has_many :favorites,
+  class_name: "Favorite",
+  primary_key: :id,
+  foreign_key: :gist_id
+
+  has_many :favoriters, through: :favorites, source: :user
 
 end

@@ -11,7 +11,6 @@ window.GistCloneApp = {
 
     GistCloneApp.gists.fetch({
       success: function() {
-        console.log(GistCloneApp.gists)
         new GistCloneApp.Routers.GistsRouter($rootEl);
         Backbone.history.start();
       },

@@ -7,6 +7,13 @@ class User < ActiveRecord::Base
   primary_key: :id,
   foreign_key: :user_id
 
+  has_many :favorites,
+  class_name: "Favorite",
+  primary_key: :id,
+  foreign_key: :user_id
+
+  has_many :favorite_gists, through: :favorites, source: :gist
+
   validates :password_digest, :presence => { :message => "Password can't be blank" }
   validates :password, :length => { :minimum => 6, :allow_nil => true }
   validates :session_token, :presence => true

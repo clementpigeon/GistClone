@@ -2,8 +2,8 @@ class GistsController < ApplicationController
   respond_to :json
 
   def index
-    @gists = Gist.find_by_user_id(current_user.id)
-    render json: @gists
+    @gists = Gist.find_all_by_user_id(current_user.id)
+    render json: @gists.to_json(include: :favorites)
   end
 
   def create
