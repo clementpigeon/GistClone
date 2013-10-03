@@ -2,6 +2,11 @@ class User < ActiveRecord::Base
   attr_accessible :username, :password
   attr_reader :password
 
+  has_many :gists,
+  class_name: "Gist",
+  primary_key: :id,
+  foreign_key: :user_id
+
   validates :password_digest, :presence => { :message => "Password can't be blank" }
   validates :password, :length => { :minimum => 6, :allow_nil => true }
   validates :session_token, :presence => true

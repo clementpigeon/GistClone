@@ -9,10 +9,17 @@ group :assets do
 end
 
 group :development do
+  gem 'quiet_assets'
   gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'rename'
 end
 
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'jquery-rails'
 gem 'pg'
-gem 'rename'
+
+gem 'backbone-on-rails'
+gem 'ejs'
+
