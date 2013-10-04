@@ -1,3 +1,11 @@
+<% if (CURRENT_USER_ID) { %>
+  <p>Logged in as: <%= CURRENT_USER_ID %></p>
+
+
+<form action="/session" method="post"><div><input name="_method" type="hidden" value="delete" /><input type="submit" value="Logout" /></div></form>
+  </ul>
+<% } %>
+
 <h2>Your gists</h2>
 
 <ul>

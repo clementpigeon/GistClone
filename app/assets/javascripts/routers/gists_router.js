@@ -1,18 +1,20 @@
 GistCloneApp.Routers.GistsRouter = Backbone.Router.extend({
-  initialize: function($rootEl){
+  initialize: function($rootEl, $sidebarEl){
     console.log("router initialized");
     this.$rootEl = $rootEl;
+    this.$sidebarEl = $sidebarEl;
+    var indexView = new GistCloneApp.Views.GistsIndex();
+    this.$sidebarEl.append(indexView.render().$el);
   },
 
   routes:{
     "": "index",
     'gists/new' : 'new',
-    'gits/:id': "show"
+    'gists/:id': "show"
   },
 
   index: function(){
-    var indexView = new GistCloneApp.Views.GistsIndex();
-    this.$rootEl.append(indexView.render().$el);
+    this.$rootEl.empty();
   },
 
   new: function(){
@@ -21,9 +23,12 @@ GistCloneApp.Routers.GistsRouter = Backbone.Router.extend({
   },
 
   show: function(id){
-    GistCloneApp.gists.find
+    console.log('show action, id: ', id)
+    var gist = GistCloneApp.gists.get(id);
+    console.log(gist);
     var gistShowView = new GistCloneApp.Views.GistShowView({
-      model:
+      model: gist
     });
+  this.$rootEl.html(gistShowView.render().$el);
   }
 });

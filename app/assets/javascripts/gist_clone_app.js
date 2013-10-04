@@ -7,11 +7,12 @@ window.GistCloneApp = {
     console.log("started");
 
     var $rootEl = $('#content');
+    var $sidebarEl = $('#sidebar');
     GistCloneApp.gists = new GistCloneApp.Collections.Gists();
 
     GistCloneApp.gists.fetch({
       success: function() {
-        new GistCloneApp.Routers.GistsRouter($rootEl);
+        new GistCloneApp.Routers.GistsRouter($rootEl, $sidebarEl);
         Backbone.history.start();
       },
       error: function() {

@@ -12,6 +12,27 @@
  *= require_tree .
  */
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#sidebar {
+  border-right: 2px solid #666;
+  margin: 0;
+  padding: 0 20px;
+  width: 200px;
+  height: 100%;
+  float: left;
+}
+#content {
+  margin: 0;
+  padding: 20px;
+  height: 100%;
+  float: left;
+}
 
 button {
   border-radius: 3px;
@@ -41,5 +62,16 @@ li {
 }
 ul {
   list-style: none;
+}
+
+.file-name, .file-body {
+  border: 2px solid #555;
+  border-radius: 5px;
+  background: #D2DAF7;
+  padding: 10px 20px;
+}
+
+.file-name {
+  font-weight: bold;
 }
 

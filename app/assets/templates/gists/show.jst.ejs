@@ -1,0 +1,11 @@
+<h2><%= gist.escape('title') %></h2>
+
+<% files.each(function(file){ %>
+  <div class='file-name'><%= file.get('name') %></div>
+  <div class='file-body'><%= file.get('body') %></div>
+  <br>
+<%  }) %>
+
+
+
+<a href='#/' >Back to all gists</a>

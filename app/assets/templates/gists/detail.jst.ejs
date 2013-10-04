@@ -1,1 +1,3 @@
-<button class='favorite'>&hearts;</button><button class='unfavorite'>&#x2639;</button><%= gist.escape('title') %>
+<button class='favorite'>&hearts;</button>
+<button class='unfavorite'>&#x2639;</button>
+<a href='/#/gists/<%= gist.escape('id') %>' ><%= gist.escape('title') %></a>
